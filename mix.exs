@@ -49,7 +49,7 @@ defmodule Sentry.Mixfile do
           "Plug and Phoenix": [Sentry.PlugCapture, Sentry.PlugContext, Sentry.LiveViewHook],
           Loggers: [Sentry.LoggerBackend, Sentry.LoggerHandler],
           "Data Structures": [Sentry.Attachment, Sentry.CheckIn],
-          HTTP: [Sentry.HTTPClient, Sentry.HackneyClient],
+          HTTP: [Sentry.HTTPClient, Sentry.FinchClient],
           Interfaces: [~r/^Sentry\.Interfaces/],
           Testing: [Sentry.Test]
         ],
@@ -63,7 +63,7 @@ defmodule Sentry.Mixfile do
         ],
         authors: ["Mitchell Henke", "Jason Stiebs", "Andrea Leopardi"]
       ],
-      xref: [exclude: [:hackney, :hackney_pool, Plug.Conn, :telemetry]],
+      xref: [exclude: [:finch, :finch_pool, Plug.Conn, :telemetry]],
       aliases: [aliases()]
     ]
   end
